@@ -1,0 +1,128 @@
+{
+	"id": "70081714-e4eb-491b-aca7-efe838d25865",
+	"name": "Bukutamu",
+	"timestamp": "2021-09-30T13:38:02.415Z",
+	"collection_id": "2892046-84cd3df9-1422-4d3b-8475-7034a2a2a961",
+	"folder_id": 0,
+	"environment_id": "47d3752c-db41-4339-9f86-6b31c20e69f4",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "24ceb4e0-2673-4fe1-9bd6-9be39ccaa9e2",
+			"name": "Get all data",
+			"url": "http://localhost:3008/api/v1/bukutamu",
+			"time": 503,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				503
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "51cb5758-b2a3-44db-b090-755f5d585f39",
+			"name": "Post data",
+			"url": "http://localhost:3008/api/v1/bukutamu/save",
+			"time": 60,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				60
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4e79aaa1-86a2-4ece-ab94-94a7dfd9da87",
+			"name": "Delete data",
+			"url": "http://localhost:3008/api/v1/bukutamu/delete/4",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1c1dfaa7-ea00-43d9-9f2c-54c8302f9dc5",
+			"name": "Get data per page",
+			"url": "http://localhost:3008/api/v1/bukutamu/?page=2",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c309a4c3-1afe-4e74-a058-af9a9615fd68",
+			"name": "Update data",
+			"url": "http://localhost:3008/api/v1/bukutamu/update/3",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				16
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 595,
+	"collection": {
+		"requests": [
+			{
+				"id": "24ceb4e0-2673-4fe1-9bd6-9be39ccaa9e2",
+				"method": "GET"
+			},
+			{
+				"id": "51cb5758-b2a3-44db-b090-755f5d585f39",
+				"method": "POST"
+			},
+			{
+				"id": "4e79aaa1-86a2-4ece-ab94-94a7dfd9da87",
+				"method": "DELETE"
+			},
+			{
+				"id": "1c1dfaa7-ea00-43d9-9f2c-54c8302f9dc5",
+				"method": "GET"
+			},
+			{
+				"id": "c309a4c3-1afe-4e74-a058-af9a9615fd68",
+				"method": "PUT"
+			}
+		]
+	}
+}

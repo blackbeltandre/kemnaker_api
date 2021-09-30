@@ -1,0 +1,48 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: kemnaker-api
+    command: npm run start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3008:3008"
+    depends_on:
+      - postgres-db
+    networks:
+      - kemnaker   
+
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      DATABASE_URL: "postgres://postgres:password@postgres-db:5432/kemnaker"
+    volumes:
+      - database_postgres:/var/lib/postgresql/data
+      - ./db/dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql
+    networks:
+      - kemnaker 
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_db_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    depends_on:
+      - postgres-db
+    ports:
+      - "5056:80"
+    networks:
+      - kemnaker
+    restart: unless-stopped
+volumes:
+  api:
+  database_postgres:                  
+
+# Networks to be created to facilitate communication between containers
+networks:
+  kemnaker:
+    driver: bridge    
